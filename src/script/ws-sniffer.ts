@@ -11,6 +11,10 @@
     } else if (data instanceof Blob) {
       const arrayBuffer = await data.arrayBuffer()
       text = new TextDecoder('utf-8').decode(arrayBuffer)
+    } else if (typeof data === 'string') {
+      text = data
+
+      return null
     } else {
       console.warn('❓ Unknown data type:', data)
       return null
@@ -22,7 +26,7 @@
 
     let firstJsonCharIndex = -1
     if (firstBrace === -1 && firstBracket === -1) {
-      console.warn('❓ 找不到 { 或 [，不是 JSON 格式')
+      console.warn(text, '❓ 找不到 { 或 [，不是 JSON 格式')
       return null
     } else if (firstBrace === -1) {
       firstJsonCharIndex = firstBracket
@@ -66,5 +70,6 @@
   }
 
   CustomWebSocket.prototype = OriginalWebSocket.prototype
+
   window.WebSocket = CustomWebSocket as unknown as typeof window.WebSocket
 })()
