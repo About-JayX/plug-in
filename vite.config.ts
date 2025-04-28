@@ -40,7 +40,7 @@ export default defineConfig({
           flatten: false,
           hook: 'writeBundle',
         }),
-      ],
+      ],        
       input: {
         popup: resolve(__dirname, 'src/popup/index.tsx'),
         background: resolve(__dirname, 'src/background/index.ts'),

@@ -1,9 +1,5 @@
 const script = document.createElement('script')
+script.type = 'module'
 script.src = chrome.runtime.getURL('script/ws-sniffer.js')
-console.log('load_')
-
-script.onload = function () {
-  console.log('onload script_')
-  ;(this as HTMLScriptElement).remove()
-}
+// script.onload = () => script.remove()
 ;(document.head || document.documentElement).appendChild(script)
