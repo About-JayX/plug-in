@@ -10,10 +10,14 @@
     "48": "images/icon-48.png",
     "128": "images/icon-128.png"
   },
+  "action": {
+    "default_icon": "images/icon-16.png",
+    "default_popup": "popup/index.html"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["script/content.js"],
+      "js": ["content/index.js"],
       "run_at": "document_start"
     }
   ],

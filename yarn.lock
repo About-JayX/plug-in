@@ -568,10 +568,30 @@
   dependencies:
     "@babel/types" "^7.20.7"
 
+"@types/chrome@^0.0.317":
+  version "0.0.317"
+  resolved "https://registry.npmjs.org/@types/chrome/-/chrome-0.0.317.tgz#105f222075c1dabd9c914dd6190d27d32487f7a0"
+  integrity sha512-ibKycbXX8ZZToFshjgWg98BTvFUSvQht8m53Xc+87ye3Z6ZoHJubLjoiDsil8rtW+noWE+Z0+7y0nwLxArU+CQ==
+  dependencies:
+    "@types/filesystem" "*"
+    "@types/har-format" "*"
+
 "@types/estree@1.0.7", "@types/estree@^1.0.6":
   version "1.0.7"
   resolved "https://registry.npmjs.org/@types/estree/-/estree-1.0.7.tgz#4158d3105276773d5b7695cd4834b1722e4f37a8"
   integrity sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==
+
+"@types/filesystem@*":
+  version "0.0.36"
+  resolved "https://registry.npmjs.org/@types/filesystem/-/filesystem-0.0.36.tgz#7227c2d76bfed1b21819db310816c7821d303857"
+  integrity sha512-vPDXOZuannb9FZdxgHnqSwAG/jvdGM8Wq+6N4D/d80z+D4HWH+bItqsZaVRQykAn6WEVeEkLm2oQigyHtgb0RA==
+  dependencies:
+    "@types/filewriter" "*"
+
+"@types/filewriter@*":
+  version "0.0.33"
+  resolved "https://registry.npmjs.org/@types/filewriter/-/filewriter-0.0.33.tgz#d9d611db9d9cd99ae4e458de420eeb64ad604ea8"
+  integrity sha512-xFU8ZXTw4gd358lb2jw25nxY9QAgqn2+bKKjKOYfNCzN4DKCFetK7sPtrlpg66Ywe3vWY9FNxprZawAh9wfJ3g==
 
 "@types/fs-extra@^8.0.1":
   version "8.1.5"
@@ -587,6 +607,11 @@
   dependencies:
     "@types/minimatch" "*"
     "@types/node" "*"
+
+"@types/har-format@*":
+  version "1.2.16"
+  resolved "https://registry.npmjs.org/@types/har-format/-/har-format-1.2.16.tgz#b71ede8681400cc08b3685f061c31e416cf94944"
+  integrity sha512-fluxdy7ryD3MV6h8pTfTYpy/xQzCFC7m89nOH9y94cNqJ1mDIDPut7MnRHI3F6qRmh/cT2fUjG1MLdCNb4hE9A==
 
 "@types/json-schema@^7.0.15":
   version "7.0.15"
