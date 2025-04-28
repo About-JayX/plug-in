@@ -1,4 +1,4 @@
-export interface Token {
+export interface Token extends SimpleToken {
   mint: string
   name: string
   symbol: string
@@ -41,4 +41,16 @@ export interface Token {
   banner_uri: string | null
   hide_banner: boolean
   usd_market_cap: number
+}
+
+export interface SimpleToken {
+  mint: string
+  symbol: string
+  name: string
+  creator: string
+  createdAt: number
+  twitter: string | null
+  website: string
+  telegram: string | null
+  description: string
 }

@@ -11,9 +11,11 @@ import { extractJsonFromData } from './utils'
       : new OriginalWebSocket(url)
 
     ws.addEventListener('message', async event => {
-      const json = await extractJsonFromData(event.data)
-      if (json) {
-        console.log('✅ 成功解析成对象:', json)
+      const data = await extractJsonFromData(event.data)
+      if (data) {
+        if (data.mint && !data.signature) {
+          window.postMessage({ type: 'CREATED_AT_TOKEN', data })
+        }
       }
     })
 
