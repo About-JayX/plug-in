@@ -48,7 +48,7 @@ export interface SimpleToken {
   symbol: string
   name: string
   creator: string
-  createdAt: number
+  createdAt: string
   twitter: string | null
   website: string
   telegram: string | null
