@@ -22,9 +22,5 @@ export const createAtToken = (token: Token, tokens: SimpleToken[]) => {
     description: token.description,
   }
   const index = tokens.findIndex(item => item.mint === simpleToken.mint)
-  if (index === -1) {
-    tokens.push(simpleToken)
-  } else {
-    tokens[index] = simpleToken
-  }
+  if (index === -1) tokens.unshift(simpleToken)
 }

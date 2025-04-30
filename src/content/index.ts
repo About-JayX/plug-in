@@ -2,8 +2,9 @@
   const script = document.createElement('script')
   script.type = 'module'
   script.src = chrome.runtime.getURL('script/ws-sniffer.js')
-  // script.onload = () => script.remove()
+  script.onload = () => script.remove()
   ;(document.head || document.documentElement).appendChild(script)
+
   const port = chrome.runtime.connect({ name: 'CREATED_AT_TOKEN' })
 
   window.addEventListener('message', event => {
