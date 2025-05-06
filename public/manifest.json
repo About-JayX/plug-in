@@ -27,7 +27,8 @@
       "resources": [
         "script/ws-sniffer.js",
         "script/utils.js",
-        "script/type.js"
+        "script/type.js",
+        "script/http-sniffer.js"
       ],
       "matches": ["<all_urls>"]
     }

@@ -54,3 +54,84 @@ export interface SimpleToken {
   telegram: string | null
   description: string
 }
+export enum Chain {
+  bsc,
+  solana
+}
+
+export interface UnifiedToken {
+  name: string
+  symbol: string
+  description: string
+  logo: string
+  twitter: string | null
+  website: string
+  telegram: string | null
+  createdAt: string
+  address: string
+  chain: Chain
+  dex: string
+}
+
+export interface FourMemeBase {
+  address: string;
+  image: string;
+  name: string
+  shortName: string
+  status: string
+  createDate: number;
+}
+
+export interface FourMemeToken extends FourMemeBase {
+  id: number;
+  address: string;
+  image: string;
+  name: string;
+  shortName: string;
+  symbol: string;
+  descr: string;
+  webUrl: string | null;
+  telegramUrl: string| null;
+  twitterUrl: string| null;
+  totalAmount: string;
+  saleAmount: string;
+  b0: string;
+  t0: string;
+  launchTime: number;
+  minBuy: string;
+  maxBuy: string;
+  userId: number;
+  userAddress: string;
+  userName: string;
+  userAvatar: string;
+  status: "PUBLISH" | string; // You might want to define a more specific enum if you know the possible values
+  showStatus: "SHOW" | string; // Same as above
+  tokenPrice: {
+    price: string;
+    maxPrice: string;
+    increase: string;
+    amount: string;
+    marketCap: string;
+    trading: string;
+    dayIncrease: string;
+    dayTrading: string;
+    raisedAmount: string;
+    progress: string;
+    liquidity: string;
+    tradingUsd: string;
+    tamount: string;
+    bamount: string;
+  };
+  oscarStatus: "Hide" | string; // Same as above
+  progressTag: boolean;
+  ctoTag: boolean;
+  version: "V3" | string; // Same as above
+  clickFunCheck: boolean;
+  reserveAmount: string;
+  raisedAmount: string;
+  networkCode: "BSC" | string; // Same as above
+  label: "Meme" | string; // Same as above
+  createDate: number;
+  isRush: boolean;
+  dexType: "PANCAKE_SWAP" | string; // Same as above
+}

@@ -20,6 +20,11 @@ import { createAtToken } from './createAtToken'
           createAtToken(token, tokens)
         })
         break
+      case 'FOUR_MEME_TOKEN':
+        port.onMessage.addListener(message => {
+          console.log(message.payload.data, 'four meme')
+        })
+        break
 
       case 'POPUP_PORT':
         popupProt = port

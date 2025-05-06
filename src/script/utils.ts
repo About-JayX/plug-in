@@ -1,3 +1,5 @@
+import {FourMemeToken} from "./type";
+
 export const extractJsonFromData = async (
   data: string | AllowSharedBufferSource | undefined
 ) => {
@@ -39,5 +41,40 @@ export const extractJsonFromData = async (
   } catch (e) {
     console.error('❌ JSON 解析失败:', e, jsonPart)
     return null
+  }
+}
+
+
+export function extractJson(
+  data: string
+) {
+  try {
+    return JSON.parse(data);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (e: any) {
+    return null;
+  }
+}
+export function checkFourMemeTokenArray(arr: any[]): FourMemeToken[] | null {
+  if (!Array.isArray(arr)) {
+    return null; // 如果不是数组，直接返回
+  }
+  const isTokenArray = arr.every(item => {
+    return (
+      typeof item === 'object' &&
+      item !== null &&
+      'id' in item &&
+      typeof item.id === 'number' &&
+      'name' in item &&
+      typeof item.name === 'string' &&
+      'shortName' in item
+      // 检查 FourMemeToken 接口中的其他必需属性和类型
+    );
+  });
+
+  if (isTokenArray) {
+    return arr as FourMemeToken[];
+  } else {
+    return null;
   }
 }
