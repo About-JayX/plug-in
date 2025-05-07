@@ -24,11 +24,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": [
-        "script/ws-sniffer.js",
-        "script/utils.js",
-        "script/type.js"
-      ],
+      "resources": ["script/*.js"],
       "matches": ["<all_urls>"]
     }
   ],

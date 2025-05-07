@@ -40,7 +40,7 @@ export default defineConfig({
           flatten: false,
           hook: 'writeBundle',
         }),
-      ],        
+      ],
       input: {
         popup: resolve(__dirname, 'src/popup/index.tsx'),
         background: resolve(__dirname, 'src/background/index.ts'),
@@ -54,7 +54,12 @@ export default defineConfig({
           return '[name]/index.js'
         },
 
-        chunkFileNames: '[name].js',
+        chunkFileNames: chunk => {
+          const name = chunk.name.startsWith('_')
+            ? chunk.name.slice(1)
+            : chunk.name
+          return `script/${name}.js`
+        },
         assetFileNames: '[name].[ext]',
       },
     },

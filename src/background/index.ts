@@ -27,14 +27,27 @@ import { createAtToken } from './createAtToken'
     }
   })
   chrome.runtime.onMessage.addListener(message => {
-    console.log(message, 'message')
-    if (message.type === 'REQUEST_TOKENS') {
-      console.log('请求数据')
+    switch (message.type) {
+      case 'REQUEST_TOKENS':
+        console.log('请求数据')
 
-      popupProt?.postMessage({
-        type: 'UPDATE_TOKENS',
-        payload: { data: tokens },
-      })
+        popupProt?.postMessage({
+          type: 'UPDATE_TOKENS',
+          payload: { data: tokens },
+        })
+        break
+      case 'CHECK_DATA': {
+        const x = tokens[0].twitter
+        if (!x) return
+        fetch(x)
+          .then(response => response.text())
+          .then(data => console.log(data, 'data_'))
+          .catch(err => console.log(err, 'err_'))
+        break
+      }
+
+      default:
+        break
     }
   })
 })()
