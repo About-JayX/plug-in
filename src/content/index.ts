@@ -5,7 +5,7 @@
   script.onload = () => script.remove()
   console.log(script, 'script')
   ;(document.head || document.documentElement).appendChild(script)
-  ;(document.head || document.documentElement).appendChild(http)
+  // ;(document.head || document.documentElement).appendChild(http)
 
   const port = chrome.runtime.connect({ name: 'CREATED_AT_TOKEN' })
   const four_meme_port = chrome.runtime.connect({ name: 'FOUR_MEME_TOKEN' })
